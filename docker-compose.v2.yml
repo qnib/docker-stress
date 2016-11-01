@@ -1,0 +1,12 @@
+version: '2'
+services:
+  stress:
+    image: qnib/stress
+    environment:
+     - STRESS_RANDOM_CPU=1
+     - STRESS_RANDOM_MOD=60
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://localhost:12201"
+
